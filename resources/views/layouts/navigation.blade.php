@@ -21,20 +21,18 @@
                 </div>
             </div>
 
-            <!-- Search Bar -->
-            
-
-
-            <!-- Settings Dropdown -->
+            <!-- Search & Settings -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+                <!-- Search Bar -->
                 <div class="">
-                    <form role="search">
+                    <form action="{{ url('search') }}" role="search">
                         <div class="">
-                            <input type="search" placeholder="Search Jots" class=""/>
+                            <input type="search" name="search" value="" placeholder="Search Jots" class=""/>
                             <a href="#" class="btn-link btn-lg mb-2">Search</a>
                         </div>
                     </form>
                 </div>
+                <!-- Settings Dropdown -->
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">

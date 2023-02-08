@@ -22,6 +22,18 @@ class NoteController extends Controller
         return view('notes.index')->with('notes', $notes);
     }
 
+
+    // SEARCH notes by title via the search input field, or return a message if field is blank
+    public function searchNotes(Request $request)
+    {
+        if($request->search){
+            $searchNotes = Note::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(5);
+            return view('notes.search', compact('searchNotes'));
+        }else{
+            return redirect()->back()->with('message','Search Terms Missing');
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
