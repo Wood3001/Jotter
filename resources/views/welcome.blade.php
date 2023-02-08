@@ -23,12 +23,12 @@
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register!!!!\\\</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-            <h1 class="text-5xl">LiteNotes</h1>
+            <h1 class="text-5xl">Jotter</h1>
         </div>
     </body>
 </html>

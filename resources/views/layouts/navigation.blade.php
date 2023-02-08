@@ -10,6 +10,19 @@
                     </a>
                 </div>
 
+                <!-- Search Bar -->
+                <div>
+                    <form role="search">
+                        <div class="input-group">
+                            <input type="search" placeholder="Search Jots" class="form-control"/>
+                            <button class="btn bg-white" type="submit">
+                                <p>Search</p>
+                            </button>
+                            
+                        </div>
+                    </form>
+                </div>
+
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('notes.index')" :active="request()->routeIs('notes.index')">
