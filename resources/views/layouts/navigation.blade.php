@@ -25,10 +25,10 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Search Bar -->
                 <div class="">
-                    <form action="{{ url('search') }}" role="search">
+                    <form action="{{ url('search') }}" method="GET" role="search">
                         <div class="">
                             <input type="search" name="search" value="" placeholder="Search Jots" class=""/>
-                            <a href="#" class="btn-link btn-lg mb-2">Search</a>
+                            <button class="btn-link btn-lg mb-2">Search</button>
                         </div>
                     </form>
                 </div>
