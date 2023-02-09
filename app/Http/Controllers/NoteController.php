@@ -27,8 +27,8 @@ class NoteController extends Controller
     public function searchNotes(Request $request)
     {
         if($request->search){
-            $searchNotes = Note::where('title','LIKE','%'.$request->search.'%')->latest()->paginate(5);
-            return view('notes.search', compact('searchNotes'));
+            $searchNotes = Note::where('title','LIKE','%'.$request->search.'%')->latest('updated_at')->paginate(5);
+            return view('notes.search')->with('notes', $searchNotes);
         }else{
             return redirect()->back()->with('message','Search Terms Missing');
         }
