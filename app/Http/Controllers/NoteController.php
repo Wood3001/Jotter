@@ -17,10 +17,10 @@ class NoteController extends Controller
     public function index(Request $request)
     {
         $notes = Note::where([
-            ['title', '!=', Null],
             [function ($query) use ($request) {
                 if(($term = $request->term)) {
                     $query->orWhere('title','LIKE','%' . $term . '%')->get();
+                    $query->orWhere('text','LIKE','%' . $term . '%')->get();
                 }
             }]
         ])
