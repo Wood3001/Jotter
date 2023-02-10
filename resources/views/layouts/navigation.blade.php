@@ -24,15 +24,23 @@
             <!-- Search & Settings -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- Search Bar -->
-                <div class="">
-                    <form action="{{ url('search') }}" method="GET" role="search">
+                <div>
+                    <div class="mx-auto pull-right">
                         <div class="">
-                            <input type="search" name="search" value="" placeholder="Search Jots" class=""/>
-                            <button class="btn-link btn-lg mb-2">Search</button>
+                            <form action="{{ route('notes.index') }}" method="GET" role="search">
+            
+                                <div class="input-group">
+                                    <span class="input-group-btn mr-5 mt-1">
+                                        <button class="btn-link btn-lg mb-2" type="submit" title="Search projects">
+                                            Search
+                                        </button>
+                                    </span>
+                                    <input type="text" class="form-control mr-2" name="term" placeholder="Search notes" id="term">
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <!-- Settings Dropdown -->
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">

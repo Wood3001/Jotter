@@ -14,24 +14,23 @@ class NoteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        // $notes = Note::where('user_id', Auth::id())->latest('updated_at')->paginate(5);
-        // $notes = Auth::user()->notes()->latest('updated_at')->paginate(5);
-        $notes = Note::whereBelongsTo(Auth::user())->latest('updated_at')->paginate(5);
-        return view('notes.index')->with('notes', $notes);
-    }
+        $notes = Note::where([
+            ['title', '!=', Null],
+            [function ($query) use ($request) {
+                if(($term = $request->term)) {
+                    $query->orWhere('title','LIKE','%' . $term . '%')->get();
+                }
+            }]
+        ])
+        
+        ->whereBelongsTo(Auth::user())
+        ->latest('updated_at')
+        ->paginate(5);
 
 
-    // SEARCH notes by title via the search input field, or return a message if field is blank
-    public function searchNotes(Request $request)
-    {
-        if($request->search){
-            $searchNotes = Note::where('title','LIKE','%'.$request->search.'%')->latest('updated_at')->paginate(5);
-            return view('notes.search')->with('notes', $searchNotes);
-        }else{
-            return redirect()->back()->with('message','Search Terms Missing');
-        }
+        return view('notes.index', compact('notes'))->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
