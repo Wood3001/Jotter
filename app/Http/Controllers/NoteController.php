@@ -19,7 +19,10 @@ class NoteController extends Controller
         $notes = Note::where([
             [function ($query) use ($request) {
                 if(($term = $request->term)) {
-                    $query->orWhere('title','LIKE','%' . $term . '%')->orWhere('text','LIKE','%' . $term . '%')->get();
+                    $query
+                    ->orWhere('title','LIKE','%' . $term . '%')
+                    ->orWhere('text','LIKE','%' . $term . '%')
+                    ->get();
                 }
             }]
         ])
@@ -31,8 +34,6 @@ class NoteController extends Controller
         // dd($request);
 
         return view('notes.index', compact('notes'))->with('i', (request()->input('page', 1) - 1) * 5);
-
-        
     }
 
     /**
