@@ -30,9 +30,7 @@
                             <form action="{{ route('notes.index') }}" method="GET" role="search">
                                 <div class="input-group">
                                     <span class="input-group-btn mr-5 mt-1">
-                                        <button class="btn-link btn-lg mb-2" type="submit" title="Search projects">
-                                            Search
-                                        </button>
+                                        <button class="btn-link btn-lg mb-2" type="submit" title="Search projects">Search</button>
                                     </span>
                                     <input type="text" class="form-control mr-2" name="term" placeholder="Search title & content" id="term">
                                 </div>

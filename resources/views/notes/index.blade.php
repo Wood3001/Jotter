@@ -1,10 +1,17 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ request()->routeIs('notes.index') ? __('Notes') : __('Trash') }}
+            @if(request()->routeIs('notes.index'))
+                @if(request()->query())
+                    {{ __('Search Results')  }}
+                @else
+                    {{ __('Notes')  }}
+                @endif
+            @else
+                {{ __('Trash')  }}
+            @endif
         </h2>
     </x-slot>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-alert-success>
@@ -35,7 +42,7 @@
                 </div>
             @empty
                 @if(request()->routeIs('notes.index'))
-                <p>You have no notes yet.</p>
+                <p>No notes found.</p>
                 @else
                 <p>No items in the Trash.</p>
                 @endif

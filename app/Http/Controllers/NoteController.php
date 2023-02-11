@@ -28,8 +28,11 @@ class NoteController extends Controller
         ->latest('updated_at')
         ->paginate(5);
 
+        // dd($request);
 
         return view('notes.index', compact('notes'))->with('i', (request()->input('page', 1) - 1) * 5);
+
+        
     }
 
     /**
