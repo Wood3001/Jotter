@@ -28,7 +28,8 @@
                     @endauth
                 </div>
             @endif
-            <h1 class="text-5xl">Jotter</h1>
+            <x-application-logo class="block h-9 w-auto fill-current text-gray-800" style="color:#025e7b" />
+            <h1 class="text-5xl" style="color:#025e7b">Jotter</h1>
         </div>
     </body>
 </html>
