@@ -5,8 +5,9 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
-                    <a href="{{ route('notes.index') }}">
+                    <a href="{{ route('notes.index') }}" class="flex flex-row items-center">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" style="color:#025e7b" />
+                        {{-- <h1 class="text-5xl" style="color:#025e7b">Jotter</h1> --}}
                     </a>
                 </div>
                 <!-- Navigation Links -->
