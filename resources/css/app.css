@@ -4,20 +4,31 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
-    .btn-link {
-        @apply inline-block px-4 py-2 bg-indigo-700 rounded-md font-bold text-sm text-white uppercase tracking-widest hover:bg-indigo-800 active:bg-indigo-900 focus:ring ring-indigo-300;
+    .note-title > a {
+        @apply transition duration-700 ease-in-out hover:text-second-color transition duration-300 ease-in-out;
     }
+
+    .success-box {
+        @apply bg-second-color border-first-color text-third-color;
+    }
+
+    .btn-link {
+        @apply inline-block px-4 py-2 bg-first-color rounded-2xl font-bold text-sm text-white uppercase tracking-widest transition duration-700 ease-in-out hover:bg-second-color transition duration-300 ease-in-out active:bg-third-color focus:ring ring-first-color;
+    }
+
     .btn-lg {
         @apply px-6 py-3;
     }
     .btn {
-        @apply px-4 py-2 rounded-md font-bold text-sm text-white uppercase tracking-widest focus:ring focus:outline-none;
+        @apply px-4 py-2 rounded-2xl font-bold text-sm text-white uppercase tracking-widest focus:ring focus:outline-none;
     }
     .btn-danger {
         @apply bg-red-600 hover:bg-red-700 active:bg-red-700 ring-red-300;
     }
-}
 
-body {
-    background: red;
+    .form-control {
+        @apply rounded-2xl;
+    }
+
+    
 }
