@@ -27,7 +27,7 @@
     }
 
     .form-control {
-        @apply rounded-2xl;
+        @apply rounded-2xl border-2 border-first-color;
     }
 
     
