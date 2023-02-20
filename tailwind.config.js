@@ -14,13 +14,13 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors: {
-                'blue': '#4281A4',
-                'dark-blue': '#035E7B',
-            },
-        },
-        fill: {
-            
-        }
+            'cerulean': '#4281A4',
+            'lapis': '#035E7B',
+            'linen': '#F7EFE8',
+            'jet': '#2A2A2A',
+            'seasalt': '#F8F8F8',
+            }, 
+        }, 
     },
 
     plugins: [require('@tailwindcss/forms')],
