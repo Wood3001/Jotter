@@ -4,12 +4,16 @@
 @import 'tailwindcss/utilities';
 
 @layer components {
+    .note-title > a {
+        @apply transition duration-700 ease-in-out hover:text-second-color transition duration-300 ease-in-out;
+    }
+
     .success-box {
         @apply bg-second-color border-first-color text-third-color;
     }
 
     .btn-link {
-        @apply inline-block px-4 py-2 bg-first-color rounded-2xl font-bold text-sm text-white uppercase tracking-widest hover:bg-second-color active:bg-third-color focus:ring ring-indigo-300;
+        @apply inline-block px-4 py-2 bg-first-color rounded-2xl font-bold text-sm text-white uppercase tracking-widest transition duration-700 ease-in-out hover:bg-second-color transition duration-300 ease-in-out active:bg-third-color focus:ring ring-first-color;
     }
 
     .btn-lg {
@@ -25,5 +29,6 @@
     .form-control {
         @apply rounded-2xl;
     }
+
     
 }
