@@ -18,18 +18,18 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ route('notes.index') }}" class="text-sm text-sky-900 underline" style="color:#025e7b">Notes</a>
+                        <a href="{{ route('notes.index') }}" class="text-sm text-first-color underline">Notes</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-cyan-700 underline" style="color:#025e7b">Log in</a>
+                        <a href="{{ route('login') }}" class="text-sm text-first-color underline">Log in</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-sky-900 underline" style="color:#025e7b">Register</a>
+                            <a href="{{ route('register') }}" class="ml-4 text-sm text-first-color underline">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-            <x-application-logo class="block h-9 w-auto fill-current text-sky-900" style="color:#025e7b" />
-            <h1 class="text-5xl" style="color:#025e7b">Jotter</h1>
+            <x-application-logo class="block h-9 w-auto"/>
+            <h1 class="text-5xl text-first-color">Jotter</h1>
         </div>
     </body>
 </html>
