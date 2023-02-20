@@ -17,7 +17,6 @@ module.exports = {
                 'first-color': '#035E7B',
                 'second-color': '#4281A4',
                 'third-color': '#ffffff',
-
             },
         },
         fill: {
